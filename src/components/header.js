@@ -18,7 +18,7 @@ const Header = ({ siteTitle }) => (
       <nav>
         <ul className="flex ml-5 space-x-4">
           <li>
-            <Link to="/blog" className="text-white text-sm">
+            <Link to="/" className="text-white text-sm">
               Articles
             </Link>
           </li>

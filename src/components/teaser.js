@@ -1,5 +1,6 @@
 import * as React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 
 export default function Teaser({ post, image }) {
   return (
@@ -11,7 +12,11 @@ export default function Teaser({ post, image }) {
       />
 
       <div>
-        <h3 className="font-semibold text-lg">{post.frontmatter.title}</h3>
+        <h3 className="font-semibold text-lg">
+          <Link to={`blog/${post.frontmatter.slug}`}>
+            {post.frontmatter.title}
+          </Link>
+        </h3>
         <p className="font-light text-sm">
           Published {post.frontmatter.published_at}
         </p>
