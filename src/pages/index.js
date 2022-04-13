@@ -1,31 +1,53 @@
+import { graphql } from "gatsby"
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-
-import Layout from "../components/layout"
+import { getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
+import Teaser from "../components/teaser"
+import Layout from "../components/layout"
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="A Gatsby astronaut"
-      className="mb-4"
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-      <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
-      <Link to="/using-dsg">Go to "Using DSG"</Link>
-    </p>
+
+    <div className="flex justify-between items-baseline">
+      <h2 className="font-bold text-xl mt-3">Recent writing</h2>
+      <p className="text-xs">Showing 3 articles</p>
+    </div>
+
+    {data.allMdx.nodes.map(post => {
+      const image = getImage(post.frontmatter.hero_image.image)
+
+      return <Teaser key={post.id} post={post} image={image} />
+    })}
   </Layout>
 )
 
 export default IndexPage
+
+export const query = graphql`
+  query BlogPosts {
+    allMdx {
+      nodes {
+        frontmatter {
+          hero_image {
+            image {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 150
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
+            }
+            alt
+          }
+          slug
+          title
+          published_at
+        }
+        id
+        excerpt(pruneLength: 150)
+      }
+    }
+  }
+`
