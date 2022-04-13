@@ -12,7 +12,7 @@ export default function Teaser({ post, image }) {
       />
 
       <div>
-        <h3 className="font-semibold text-lg">
+        <h3 className="font-semibold text-lg underline">
           <Link to={`blog/${post.frontmatter.slug}`}>
             {post.frontmatter.title}
           </Link>
