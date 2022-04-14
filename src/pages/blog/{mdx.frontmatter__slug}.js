@@ -2,16 +2,16 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { useTranslation } from "react-i18next"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import { useLocalization } from "gatsby-theme-i18n"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../../components/seo"
 import Layout from "../../components/layout"
 import { formatDate } from "../../services/i18n-formatting"
-import { useLocalization } from "gatsby-theme-i18n"
 
 const BlogPost = ({ data }) => {
+  const post = data.mdx
   const { t } = useTranslation()
   const { locale, config } = useLocalization()
-  const post = data.mdx
 
   return (
     <Layout>

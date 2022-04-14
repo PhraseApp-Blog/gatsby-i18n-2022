@@ -2,9 +2,11 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useTranslation } from "react-i18next"
+import { useLocalization } from "gatsby-theme-i18n"
 
-function Seo({ description, lang, meta, title }) {
+function Seo({ description, meta, title }) {
   const { t } = useTranslation()
+  const { locale, config } = useLocalization()
 
   const metaDescription = description || t("app_description")
   const defaultTitle = t("app_name")
@@ -12,7 +14,8 @@ function Seo({ description, lang, meta, title }) {
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: config.find(c => c.code === locale).hrefLang,
+        dir: config.find(c => c.code === locale).langDir,
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
@@ -55,14 +58,12 @@ function Seo({ description, lang, meta, title }) {
 }
 
 Seo.defaultProps = {
-  lang: `en`,
   meta: [],
   description: ``,
 }
 
 Seo.propTypes = {
   description: PropTypes.string,
-  lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 }

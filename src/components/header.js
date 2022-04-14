@@ -14,20 +14,22 @@ const Header = ({ siteTitle }) => {
           <h1>
             <LocalizedLink
               to="/"
-              className="flex items-center space-x-0.5 font-black text-white"
+              className="flex items-center font-black text-white"
             >
               <BookOpenIcon className="stroke-white h-5 w-5" />
-              <span>{siteTitle}</span>
+              <span className="inline-block ltr:ml-1 rtl:ml-0 rtl:mr-1">
+                {siteTitle}
+              </span>
             </LocalizedLink>
           </h1>
           <nav>
-            <ul className="flex ml-5 space-x-4">
+            <ul className="flex ltr:ml-5 rtl:mr-5">
               <li>
                 <LocalizedLink to="/" className="text-white text-sm">
                   {t("articles")}
                 </LocalizedLink>
               </li>
-              <li>
+              <li className="ltr:ml-4 rtl:mr-4">
                 <LocalizedLink to="/about" className="text-white text-sm">
                   {t("about")}
                 </LocalizedLink>
