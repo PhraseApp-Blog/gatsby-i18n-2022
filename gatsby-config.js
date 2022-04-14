@@ -36,6 +36,7 @@ module.exports = {
         locales: `./i18n/react-i18next`,
         i18nextOptions: {
           ns: ["translation"],
+          debug: true,
         },
       },
     },
