@@ -35,6 +35,9 @@ module.exports = {
       options: {
         locales: `./i18n/react-i18next`,
         i18nextOptions: {
+          interpolation: {
+            escapeValue: false,
+          },
           ns: ["translation"],
           debug: true,
         },

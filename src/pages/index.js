@@ -1,10 +1,10 @@
-import { graphql } from "gatsby"
 import * as React from "react"
+import { graphql } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
+import { useTranslation } from "react-i18next"
 import Seo from "../components/seo"
 import Teaser from "../components/teaser"
 import Layout from "../components/layout"
-import { useTranslation } from "react-i18next"
 
 const IndexPage = ({ data }) => {
   const { t } = useTranslation()
@@ -15,7 +15,6 @@ const IndexPage = ({ data }) => {
 
       <div className="flex justify-between items-baseline">
         <h2 className="font-bold text-xl mt-3">{t("recent_writing")}</h2>
-        <p className="text-xs">Showing 3 articles</p>
       </div>
 
       {data.allMdx.nodes.map(post => {
