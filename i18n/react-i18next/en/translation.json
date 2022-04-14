@@ -1,0 +1,9 @@
+{
+  "app_name": "fslivre",
+  "app_description": "A blog dedicated to F. Scott Fitzgerald",
+  "app_author": "Phrase",
+  "articles": "Articles",
+  "about": "About",
+  "home": "Home",
+  "recent_writing": "Recent writing"
+}

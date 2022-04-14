@@ -1,43 +1,19 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import { useTranslation } from "react-i18next"
 import "./layout.css"
+import Header from "./header"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  const { t } = useTranslation()
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header siteTitle={t("app_name") || `Title`} />
       <div className="mx-auto max-w-4xl pt-2 px-8 pb-4">
         <main>{children}</main>
-        <footer className="mt-6 pt-3 border-t-[1px] border-gray-100 border-solid text-center">
-          © {new Date().getFullYear()} | Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com" className="underline">
-            Gatsby
-          </a>{" "}
-          for the{" "}
-          <a href="https://phrase.com/blog/" className="underline">
-            Phrase Blog
-          </a>{" "}
-          | Content from{" "}
-          <a
-            href="https://en.wikipedia.org/wiki/F._Scott_Fitzgerald_bibliography"
-            className="underline"
-          >
-            Wikipedia
-          </a>
-        </footer>
+
+        <Footer />
       </div>
     </>
   )

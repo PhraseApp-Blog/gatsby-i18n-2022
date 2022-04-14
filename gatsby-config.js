@@ -1,8 +1,5 @@
 module.exports = {
   siteMetadata: {
-    title: `fslivre`,
-    description: `A blog dedicated to F. Scott Fitzgerald`,
-    author: `Phrase`,
     siteUrl: `https://example.com`,
   },
   plugins: [
@@ -31,6 +28,15 @@ module.exports = {
       options: {
         defaultLang: `en`,
         configPath: require.resolve(`./i18n/config.json`),
+      },
+    },
+    {
+      resolve: `gatsby-theme-i18n-react-i18next`,
+      options: {
+        locales: `./i18n/react-i18next`,
+        i18nextOptions: {
+          ns: ["translation"],
+        },
       },
     },
   ],

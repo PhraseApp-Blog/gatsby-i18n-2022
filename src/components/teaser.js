@@ -1,6 +1,5 @@
 import * as React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
 import { LocalizedLink } from "gatsby-theme-i18n"
 
 export default function Teaser({ post, image }) {

@@ -4,23 +4,28 @@ import { getImage } from "gatsby-plugin-image"
 import Seo from "../components/seo"
 import Teaser from "../components/teaser"
 import Layout from "../components/layout"
+import { useTranslation } from "react-i18next"
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <Seo title="Home" />
+const IndexPage = ({ data }) => {
+  const { t } = useTranslation()
 
-    <div className="flex justify-between items-baseline">
-      <h2 className="font-bold text-xl mt-3">Recent writing</h2>
-      <p className="text-xs">Showing 3 articles</p>
-    </div>
+  return (
+    <Layout>
+      <Seo title={t("home")} />
 
-    {data.allMdx.nodes.map(post => {
-      const image = getImage(post.frontmatter.hero_image.image)
+      <div className="flex justify-between items-baseline">
+        <h2 className="font-bold text-xl mt-3">{t("recent_writing")}</h2>
+        <p className="text-xs">Showing 3 articles</p>
+      </div>
 
-      return <Teaser key={post.id} post={post} image={image} />
-    })}
-  </Layout>
-)
+      {data.allMdx.nodes.map(post => {
+        const image = getImage(post.frontmatter.hero_image.image)
+
+        return <Teaser key={post.id} post={post} image={image} />
+      })}
+    </Layout>
+  )
+}
 
 export default IndexPage
 
