@@ -1,6 +1,7 @@
 import * as React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
+import { LocalizedLink } from "gatsby-theme-i18n"
 
 export default function Teaser({ post, image }) {
   return (
@@ -13,9 +14,9 @@ export default function Teaser({ post, image }) {
 
       <div>
         <h3 className="font-semibold text-lg underline">
-          <Link to={`blog/${post.frontmatter.slug}`}>
+          <LocalizedLink to={`/blog/${post.frontmatter.slug}`}>
             {post.frontmatter.title}
-          </Link>
+          </LocalizedLink>
         </h3>
         <p className="font-light text-sm">
           Published {post.frontmatter.published_at}

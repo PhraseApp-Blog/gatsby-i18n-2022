@@ -32,8 +32,11 @@ const BlogPost = ({ data }) => {
 export default BlogPost
 
 export const query = graphql`
-  query PostBySlug($frontmatter__slug: String) {
-    mdx(frontmatter: { slug: { eq: $frontmatter__slug } }) {
+  query PostBySlug($frontmatter__slug: String, $locale: String) {
+    mdx(
+      frontmatter: { slug: { eq: $frontmatter__slug } }
+      fields: { locale: { eq: $locale } }
+    ) {
       frontmatter {
         title
         published_at

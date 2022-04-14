@@ -25,8 +25,8 @@ const IndexPage = ({ data }) => (
 export default IndexPage
 
 export const query = graphql`
-  query BlogPosts {
-    allMdx {
+  query BlogPosts($locale: String) {
+    allMdx(filter: { fields: { locale: { eq: $locale } } }) {
       nodes {
         frontmatter {
           hero_image {
@@ -46,7 +46,7 @@ export const query = graphql`
           published_at
         }
         id
-        excerpt(pruneLength: 150)
+        excerpt(pruneLength: 150, truncate: true)
       }
     }
   }
