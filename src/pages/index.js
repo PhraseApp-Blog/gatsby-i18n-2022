@@ -11,7 +11,6 @@ const IndexPage = ({ data }) => (
 
     <div className="flex justify-between items-baseline">
       <h2 className="font-bold text-xl mt-3">Recent writing</h2>
-      <p className="text-xs">Showing 3 articles</p>
     </div>
 
     {data.allMdx.nodes.map(post => {
