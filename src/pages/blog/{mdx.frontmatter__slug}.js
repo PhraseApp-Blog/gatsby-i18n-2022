@@ -1,19 +1,27 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import Layout from "../../components/layout"
-import Seo from "../../components/seo"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { useTranslation } from "react-i18next"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import Seo from "../../components/seo"
+import Layout from "../../components/layout"
+import { formatDate } from "../../services/i18n-formatting"
+import { useLocalization } from "gatsby-theme-i18n"
 
 const BlogPost = ({ data }) => {
+  const { t } = useTranslation()
+  const { locale, config } = useLocalization()
   const post = data.mdx
+
   return (
     <Layout>
       <Seo title={post.frontmatter.title} />
 
       <h1 className="font-bold text-3xl mt-4">{post.frontmatter.title}</h1>
       <p className="font-light mt-2">
-        Published at {post.frontmatter.published_at}
+        {t("published", {
+          date: formatDate(post.frontmatter.published_at, locale, config),
+        })}
       </p>
 
       <GatsbyImage

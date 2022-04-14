@@ -1,8 +1,12 @@
 import * as React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { LocalizedLink } from "gatsby-theme-i18n"
+import { formatDate } from "../services/i18n-formatting"
+import { LocalizedLink, useLocalization } from "gatsby-theme-i18n"
+import { useTranslation } from "react-i18next"
 
 export default function Teaser({ post, image }) {
+  const { t } = useTranslation()
+  const { locale, config } = useLocalization()
   return (
     <article className="mt-5 flex space-x-4">
       <GatsbyImage
@@ -18,7 +22,9 @@ export default function Teaser({ post, image }) {
           </LocalizedLink>
         </h3>
         <p className="font-light text-sm">
-          Published {post.frontmatter.published_at}
+          {t("published", {
+            date: formatDate(post.frontmatter.published_at, locale, config),
+          })}
         </p>
         <p>{post.excerpt}</p>
       </div>
