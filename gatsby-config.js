@@ -30,18 +30,18 @@ module.exports = {
         configPath: require.resolve(`./i18n/config.json`),
       },
     },
-    {
-      resolve: `gatsby-theme-i18n-react-i18next`,
-      options: {
-        locales: `./i18n/react-i18next`,
-        i18nextOptions: {
-          interpolation: {
-            escapeValue: false,
-          },
-          ns: ["translation"],
-          debug: true,
-        },
-      },
-    },
+    // {
+    //   resolve: `gatsby-theme-i18n-react-i18next`,
+    //   options: {
+    //     locales: `./i18n/react-i18next`,
+    //     i18nextOptions: {
+    //       interpolation: {
+    //         escapeValue: false,
+    //       },
+    //       ns: ["translation"],
+    //       debug: true,
+    //     },
+    //   },
+    // },
   ],
 }
