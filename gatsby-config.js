@@ -30,6 +30,9 @@ module.exports = {
         configPath: require.resolve(`./i18n/config.json`),
       },
     },
+    {
+      resolve: require.resolve("./plugins/gatsby-theme-i18n-i18next-wrapper"),
+    },
     // {
     //   resolve: `gatsby-theme-i18n-react-i18next`,
     //   options: {

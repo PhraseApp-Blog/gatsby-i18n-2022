@@ -1,0 +1,8 @@
+{
+  "name": "gatsby-theme-i18n-i18next-wrapper",
+  "version": "0.0.1",
+  "description": "A custom wrapper plugin around react i18next",
+  "main": "index.js",
+  "author": "Phrase",
+  "license": "MIT"
+}
