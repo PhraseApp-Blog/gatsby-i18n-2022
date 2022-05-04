@@ -34,6 +34,7 @@ module.exports = {
       resolve: require.resolve("./plugins/gatsby-theme-i18n-i18next-wrapper"),
       options: {
         locales: `./i18n/l10n`,
+        withPhraseICE: true,
       },
     },
   ],
