@@ -15,6 +15,8 @@ const IndexPage = ({ data }) => {
 
       <div className="flex justify-between items-baseline">
         <h2 className="font-bold text-xl mt-3">{t("recent_writing")}</h2>
+
+        <p>{t("articles_published", { count: 3 })}</p>
       </div>
 
       {data.allMdx.nodes.map(post => {

@@ -7,5 +7,7 @@
   "footer": "© {{year}} | Built with <4>Gatsby</4> for the <8>Phrase Blog</8> | Content from <12>Wikipedia</12>",
   "home": "Home",
   "published": "Published {{date}}",
-  "recent_writing": "Recent writing"
+  "recent_writing": "Recent writing",
+  "articles_published_one": "{{count}} article",
+  "articles_published_other": "{{count}} articles"
 }
