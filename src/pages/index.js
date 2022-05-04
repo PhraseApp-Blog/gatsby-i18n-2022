@@ -10,21 +10,19 @@ const IndexPage = ({ data }) => {
   const { t } = useTranslation()
 
   return (
-    <React.Suspense fallback="Loading...">
-      <Layout>
-        <Seo title={t("home")} />
+    <Layout>
+      <Seo title={t("home")} />
 
-        <div className="flex justify-between items-baseline">
-          <h2 className="font-bold text-xl mt-3">{t("recent_writing")}</h2>
-        </div>
+      <div className="flex justify-between items-baseline">
+        <h2 className="font-bold text-xl mt-3">{t("recent_writing")}</h2>
+      </div>
 
-        {data.allMdx.nodes.map(post => {
-          const image = getImage(post.frontmatter.hero_image.image)
+      {data.allMdx.nodes.map(post => {
+        const image = getImage(post.frontmatter.hero_image.image)
 
-          return <Teaser key={post.id} post={post} image={image} />
-        })}
-      </Layout>
-    </React.Suspense>
+        return <Teaser key={post.id} post={post} image={image} />
+      })}
+    </Layout>
   )
 }
 

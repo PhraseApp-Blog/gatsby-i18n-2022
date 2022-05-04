@@ -15,11 +15,17 @@ const resources = {
   },
 }
 
+let isSetup = false
+
 function setupI18next(currentLocale) {
+  if (isSetup) return
+
+  isSetup = true
   i18next
-    .use(HttpApi)
+    // .use(HttpApi)
     .use(initReactI18next)
     .init({
+      resources,
       lng: currentLocale,
       interpolation: {
         escapeValue: false,
