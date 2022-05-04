@@ -1,0 +1,11 @@
+{
+  "app_name": "fslivre",
+  "app_description": "A blog dedicated to F. Scott Fitzgerald",
+  "app_author": "Phrase",
+  "articles": "Articles",
+  "about": "About",
+  "home": "Home",
+  "recent_writing": "Recent writing",
+  "footer": "© {{year}} | Built with <4>Gatsby</4> for the <8>Phrase Blog</8> | Content from <12>Wikipedia</12>",
+  "published": "Published {{date}}"
+}

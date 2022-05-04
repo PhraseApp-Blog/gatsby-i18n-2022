@@ -25,12 +25,16 @@ exports.onPreInit = ({ store }, { locales }) => {
 }
 
 exports.onCreateWebpackConfig = ({ actions, plugins }) => {
+  console.log({ absoluteLocalesDirectory })
+  console.log("define", plugins.define)
   actions.setWebpackConfig({
     plugins: [
       plugins.define({
-        GATSBY_THEME_I18N_REACT_I18NEXT_WRAPPER: JSON.stringify(
-          absoluteLocalesDirectory
-        ),
+        global: {
+          GATSBY_THEME_I18N_I18NEXT_WRAPPER: JSON.stringify(
+            absoluteLocalesDirectory
+          ),
+        },
       }),
     ],
   })
