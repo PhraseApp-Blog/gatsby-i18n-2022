@@ -1,0 +1,17 @@
+{
+  "about": "نبذة",
+  "app_author": "فريز",
+  "app_description": "مدونة مخصصة لأف سكوت فتزجيرلد",
+  "app_name": "أف أس ليفر",
+  "articles": "مقالات",
+  "footer": "© {{year}} | بني بواسطة <4>جاتسبي</4> لغرض <8>مدونة فريز</8> | المحتوى من <12>ويكيبيديا</12>",
+  "home": "الرئيسية",
+  "published": "نشر {{date}}",
+  "recent_writing": "أحدث المقالات",
+  "articles_published_zero": "لم تنشر مقالات بعد",
+  "articles_published_one": "مقال {{count}}",
+  "articles_published_two": "مقالان",
+  "articles_published_few": "{{count}} مقالات",
+  "articles_published_many": "{{count}} مقال",
+  "articles_published_other": "{{count}} مقال"
+}
