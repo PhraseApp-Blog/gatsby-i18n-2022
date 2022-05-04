@@ -25,8 +25,6 @@ exports.onPreInit = ({ store }, { locales }) => {
 }
 
 exports.onCreateWebpackConfig = ({ actions, plugins }) => {
-  console.log({ absoluteLocalesDirectory })
-  console.log("define", plugins.define)
   actions.setWebpackConfig({
     plugins: [
       plugins.define({

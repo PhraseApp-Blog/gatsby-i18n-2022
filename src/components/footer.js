@@ -10,7 +10,7 @@ function Footer() {
               border-gray-100 border-solid text-center"
     >
       <Trans i18nKey="footer">
-        {/* © {{ year }} | Built with */}
+        © {{ year }} | Built with
         {` `}
         <a href="https://www.gatsbyjs.com" className="underline">
           Gatsby

@@ -36,18 +36,5 @@ module.exports = {
         locales: `./i18n/l10n`,
       },
     },
-    // {
-    //   resolve: `gatsby-theme-i18n-react-i18next`,
-    //   options: {
-    //     locales: `./i18n/react-i18next`,
-    //     i18nextOptions: {
-    //       interpolation: {
-    //         escapeValue: false,
-    //       },
-    //       ns: ["translation"],
-    //       debug: true,
-    //     },
-    //   },
-    // },
   ],
 }
