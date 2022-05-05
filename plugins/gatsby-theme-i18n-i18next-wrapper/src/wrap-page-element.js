@@ -1,3 +1,4 @@
+/* global GATSBY_THEME_I18N_I18NEXT_WRAPPER */
 import * as React from "react"
 import i18next from "i18next"
 import { I18nextProvider } from "react-i18next"
@@ -6,7 +7,7 @@ import PhraseInContextEditorPostProcessor from "i18next-phrase-in-context-editor
 const wrapPageElement = ({ element, props }, options) => {
   const currentLocale = props.pageContext.locale
 
-  const translation = require(`${global.GATSBY_THEME_I18N_I18NEXT_WRAPPER}/${currentLocale}/translation.json`)
+  const translation = require(`${GATSBY_THEME_I18N_I18NEXT_WRAPPER}/${currentLocale}/translation.json`)
 
   i18next
     .use(
