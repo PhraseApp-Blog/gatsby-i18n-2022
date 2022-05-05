@@ -1,4 +1,5 @@
 import * as React from "react"
+import { navigate } from "gatsby"
 import { useLocalization } from "gatsby-theme-i18n"
 import { TranslateIcon } from "@heroicons/react/outline"
 
@@ -11,9 +12,9 @@ function LanguageSwitcher() {
     }
 
     if (e.target.value === defaultLang) {
-      window.location = "/"
+      navigate("/")
     } else {
-      window.location = `/${e.target.value}`
+      navigate(`/${e.target.value}`)
     }
   }
 
