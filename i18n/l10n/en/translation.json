@@ -1,13 +1,13 @@
 {
-  "about": "About us",
+  "about": "About",
   "app_author": "Phrase",
   "app_description": "A blog dedicated to F. Scott Fitzgerald",
   "app_name": "fslivre",
-  "articles": "Articles",
+  "articles": "Latest articles",
+  "articles_published_one": "{{count}} article",
+  "articles_published_other": "{{count}} articles",
   "footer": "© {{year}} | Built with <4>Gatsby</4> for the <8>Phrase Blog</8> | Content from <12>Wikipedia</12>",
   "home": "Home",
   "published": "Published {{date}}",
-  "recent_writing": "Recent writing",
-  "articles_published_one": "{{count}} article",
-  "articles_published_other": "{{count}} articles"
+  "recent_writing": "Recent writing"
 }
